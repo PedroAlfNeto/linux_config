@@ -1,0 +1,27 @@
+# add this bashrc to ~/.bashrc:
+# 	source ~/pneto_config/.bashrc.pneto
+
+# Load tmux configuration settings
+tmux source ~/pneto_config/tmux_conf/.tmux.conf
+
+# Mount google drive folder (moved to startup)
+#check if directory is empty
+#if [ -z "$(ls -A /home/pedorcas/Gdrive/Work)" ]; then
+   #if empty
+#   rclone mount Gdrive:Work /home/pedorcas/Gdrive/Work &
+#else
+
+# Configure prompt
+    export PROMPT_DIRTRIM=2 	# limit to two level directory 
+    PS1="\n\[\e[32m\]\u: \[\e[34m\][\w] \[\e[33m\]\n$> \[\e[0m\]"
+    #export PS1="\[\e[31m\]\d \t\[\e[0m\]\s-\v\$ "
+
+# ---------- Custom commands --------- #
+    # directories
+    alias cdlcpp="cd ~/Gdrive/Work/LearnCpp"
+
+    # git commands
+    alias gits="git status"
+    alias gitl="git log"
+    alias gitin="git fetch && git log ..origin/main" # see incoming commits
+    alias gitout="git fetch && git log origin/main.." # see outgoing commits
