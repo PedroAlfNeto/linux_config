@@ -16,4 +16,4 @@ if [-d "" ] #if can't find references to .bashrc.pneto in .bashrc
 #cp rclone_conf/rclone.conf ~/.config/rclone
 
 #cd  
-git clone https://github.com/PedroAlfNeto/pneto_config.git
+git clone git@github.com:PedroAlfNeto/pneto_config.git
