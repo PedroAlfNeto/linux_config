@@ -36,24 +36,24 @@ tmux source ~/pneto_config/tmux_conf/.tmux.conf
   export PROMPT_DIRTRIM=2 	 
 
   # fetch git repo details
-  source ~/.git-prompt.sh
-    parse_git_branch() {
-      #check if inside repo dir
-      if [ $(git rev-parse --is-inside-work-tree 2>/dev/null) ];then 
-        printf ' on \033[0;33m '; #
-        __git_ps1
-      fi
-    }    
+  parse_git_branch() {
+    #check if inside repo dir
+    if [ $(git rev-parse --is-inside-work-tree 2>/dev/null) ];then 
+      printf ' on \033[0;33m '; #
+      __git_ps1
+    fi
+  }    
     
   # export PS1="[\u \w]$ " #original simple
   export PS1="$green[\u]$NC in $BLUE\w$NC\$(parse_git_branch) \n$yellow $NC" # with git
     
 # ---------- Custom commands --------- #
-    # directories
-    alias cdlcpp="cd ~/Gdrive/Work/LearnCpp"
+  # directories
+  alias cdlcpp="cd ~/Gdrive/Work/LearnCpp"
 
-    # git commands
-    alias gits="git status"
-    alias gitl="git log"
-    alias gitin="git fetch && git log ..origin/main" # see incoming commits
-    alias gitout="git fetch && git log origin/main.." # see outgoing commits
+  # git commands
+  alias gits="git status"
+  alias gitd="git diff"
+  alias gitl="git log"
+  alias gitin="git fetch && git log ..origin/main" # see incoming commits
+  alias gitout="git fetch && git log origin/main.." # see outgoing commits
