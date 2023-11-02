@@ -11,5 +11,9 @@ git sparse-checkout add patched-fonts/SourceCodePro
 # Install fonts
 ./install.sh JetBrainsMono CascadiaCode Hermit SourceCodePro
 
+# Refresh system fonts
+fc-cache -vf
+
 # Delete repo
 cd .. && rm -rf nerd-fonts
+
